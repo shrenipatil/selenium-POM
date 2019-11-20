@@ -1,0 +1,14 @@
+2019-11-20 14:42:36,079  INFO [main] TestBase:34 - **** Load Properties File Successfully ****
+2019-11-20 14:42:36,476  INFO [main] HomePageTest:47 - *********************** SETUP - Starting test cases execution ***************************
+2019-11-20 14:43:25,036  INFO [main] TestBase:54 - **** Application Run With Firefox Browser ****
+2019-11-20 14:43:25,172  INFO [main] TestBase:34 - **** Load Properties File Successfully ****
+2019-11-20 14:43:29,074  INFO [main] TestBase:74 - **** entering application URL ****
+2019-11-20 14:43:29,096  INFO [main] TestBase:34 - **** Load Properties File Successfully ****
+2019-11-20 14:43:33,008  INFO [main] TestBase:34 - **** Load Properties File Successfully ****
+2019-11-20 14:43:33,056  INFO [main] HomePageTest:129 - ****************************** START - click On Projects Test ***************************************
+2019-11-20 14:43:33,363  INFO [main] HomePage:188 - *** Move to the element *Admin* ***
+2019-11-20 14:43:34,021  INFO [main] HomePage:192 - *** Move to the element *Project Info* ***
+2019-11-20 14:43:34,446  INFO [main] HomePage:195 - *** Element is Clicked  *Projects* ***
+2019-11-20 14:43:34,478  INFO [main] TestBase:34 - **** Load Properties File Successfully ****
+2019-11-20 14:43:34,487  INFO [main] HomePageTest:131 - ****************************** END - click On Projects Test *****************************************
+2019-11-20 14:43:41,017  INFO [main] HomePageTest:137 - ****************************** TearDown - Browser is closed *****************************************
