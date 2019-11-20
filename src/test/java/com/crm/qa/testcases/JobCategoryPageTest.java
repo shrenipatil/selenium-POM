@@ -1,5 +1,6 @@
 package com.crm.qa.testcases;
 
+import org.apache.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,6 +20,8 @@ public class JobCategoryPageTest extends TestBase{
 	AdminPage adminPage;
 	JobCategoriesPage jobCategoriesPage;
 	
+	Logger log = Logger.getLogger(JobCategoryPageTest.class);
+	
 	public JobCategoryPageTest()
 	{
 		super();
@@ -26,6 +29,7 @@ public class JobCategoryPageTest extends TestBase{
 	@BeforeMethod
 	public void setup()
 	{
+		log.info("*********************** SETUP - Starting test cases execution ***************************");
 		initialization();
 		loginPage=new LoginPage();
 		testUtil=new TestUtil();
@@ -36,33 +40,41 @@ public class JobCategoryPageTest extends TestBase{
 	@Test
 	public void addJobCategoryTest()
 	{
-		System.out.println("Inside test case");
+		log.info("*************************** START - add Job Category Test ******************************");
 		jobCategoriesPage=jobCategoriesPage.addJobCategory("software");
+		log.info("**************************** END - add Job Category Test ********************************");
 	}
 	
 	@Test
 	public void selectCkBoxCatTest()
 	{
-	jobCategoriesPage.selectCkBoxCat("software");
+		log.info("*************************** START - select Single Check Box category Test ******************************");
+		jobCategoriesPage.selectCkBoxCat("software");
+		log.info("**************************** END - select Single Check Box category Test ********************************");
 	}
 	
 	@Test
 	public void selectMultipleCkBoxCatTest()
 	{
-	jobCategoriesPage.selectCkBoxCat("software");
-	jobCategoriesPage.selectCkBoxCat("software engineer");
+		log.info("*************************** START - select Multiple Check Box category Test ******************************");
+		jobCategoriesPage.selectCkBoxCat("software");
+		jobCategoriesPage.selectCkBoxCat("software engineer");
+		log.info("**************************** END - select Multiple Check Box category Test ********************************");
 	}
 	
 	@Test
 	public void deleteJobCategoryTest()
 	{
+		log.info("*************************** START - delete Job Category Test ******************************");
 		jobCategoriesPage.selectCkBoxCat("software");
 		jobCategoriesPage.deleteJobCategory();
+		log.info("**************************** END - delete Job Category Test ********************************");
 	}
 	
 	@AfterMethod
 	public void tearDown()
 	{
 		driver.quit();
+		log.info("****************************** TearDown - Browser is closed *****************************************");
 	}
 }

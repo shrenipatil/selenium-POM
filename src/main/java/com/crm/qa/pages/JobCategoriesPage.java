@@ -1,12 +1,16 @@
 package com.crm.qa.pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import com.crm.qa.base.TestBase;
 
 public class JobCategoriesPage extends TestBase{
+	
+	Logger log = Logger.getLogger(JobCategoriesPage.class);
 
 	@FindBy(xpath="//input[@id='btnAdd']")
 	WebElement addBtn;
@@ -16,9 +20,6 @@ public class JobCategoriesPage extends TestBase{
 	
 	@FindBy(xpath="//input[@id='btnSave']")
 	WebElement saveBtn;
-	
-	//@FindBy(xpath="//input[@id='ohrmList_chkSelectRecord_1']")
-	//WebElement checkBox;
 	
 	@FindBy(xpath="//input[@id='btnDelete']")
 	WebElement deleteBtn;
@@ -33,11 +34,16 @@ public class JobCategoriesPage extends TestBase{
 	
 	public JobCategoriesPage addJobCategory(String addNewCategory)
 	{
-		System.out.println("inside method ");
+		try
+		{
 		addBtn.click();
 		jobCategoryName.sendKeys(addNewCategory);
 		saveBtn.click();
-		System.out.println("outside the method ");
+		}
+		catch(ElementNotVisibleException e)
+		{
+			log.error("*** Element add button is not Visible ***",e);
+		}
 		return new JobCategoriesPage();
 		
 	}
@@ -50,8 +56,15 @@ public class JobCategoriesPage extends TestBase{
 	
 	public JobCategoriesPage deleteJobCategory()
 	{
+		try
+		{
 		deleteBtn.click();
 		dialogDeleteBtn.click();
+		}
+		catch(ElementNotVisibleException e)
+		{
+			log.error("*** Element delete button is not Visible ***",e);
+		}
 		return new JobCategoriesPage();
 	}
 }
